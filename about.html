@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Garg Medical Agencies</title>
+    <meta name="description" content="Learn about Garg Medical Agencies, a licensed veterinary pharmacy in Mathura with 20+ years of experience serving farmers and veterinarians.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e7e34;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1e7e34 0%, #4fb581 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1e7e34;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-call {
+            background-color: #1e7e34;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-call:hover {
+            background-color: #165a28;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #1e7e34 0%, #4fb581 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            color: #1e7e34;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #1e7e34;
+            padding-bottom: 0.5rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #1e7e34;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #1e7e34;
+        }
+
+        .timeline-item h3 {
+            color: #1e7e34;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            color: #666;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f5e9 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #1e7e34;
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            color: #1e7e34;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1e7e34 0%, #4fb581 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        footer {
+            background: #1e3a2f;
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #4fb581;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .footer-section a {
+            color: #b3e5b3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            color: #999;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1da851;
+            transform: scale(1.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #1e7e34;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-call, .btn-whatsapp {
+                width: 100%;
+                text-align: center;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <div class="logo-icon">🐾</div>
+                <span>Garg Medical</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/products.html">Products</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="contact-buttons">
+                <a href="tel:+919897890984" class="btn-call">📞 Call Now</a>
+                <a href="https://wa.me/919897890984?text=Hello%20Garg%20Medical%20Agencies%2C%20I%20would%20like%20to%20place%20an%20order" class="btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>About Garg Medical Agencies</h1>
+        <p>Trusted Veterinary Pharmacy Since 2002</p>
+    </div>
+
+    <div class="content">
+        <!-- Our Story -->
+        <section class="section">
+            <h2>Our Story</h2>
+            <p>Garg Medical Agencies was established in 2002 with a simple mission: to provide high-quality veterinary medicines and supplements to farmers, veterinarians, and pet owners across India. What started as a small pharmacy in Mathura has grown into a trusted name in the veterinary pharmaceutical industry.</p>
+            <p>For over 20 years, we have been committed to serving the animal health community with integrity, professionalism, and a deep understanding of the unique needs of farmers, livestock owners, and veterinary professionals.</p>
+            <p>Our success is built on the foundation of trust, quality, and customer satisfaction. We take pride in being a licensed veterinary pharmacy that maintains the highest standards of pharmaceutical practice.</p>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <h2>Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>2002 - Establishment</h3>
+                    <p>Garg Medical Agencies was founded in Mathura with a vision to serve the veterinary community with quality medicines and professional support.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2005 - License & Expansion</h3>
+                    <p>Obtained full veterinary pharmacy license and expanded product range to serve more animals and regions.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2010 - Pan-India Reach</h3>
+                    <p>Established wholesale and retail supply network across India, serving farmers and veterinary clinics nationwide.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2020 - Digital Integration</h3>
+                    <p>Embraced digital channels including WhatsApp ordering and online communication for better customer service.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024 - Present</h3>
+                    <p>Continuing to serve with 20+ years of experience and commitment to animal health and veterinary care.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values -->
+        <section class="section">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Quality First</h3>
+                    <p>We ensure every product meets the highest standards of quality and efficacy for animal health.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Trust & Integrity</h3>
+                    <p>Building lasting relationships with customers through honest business practices and reliable service.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Professional Expertise</h3>
+                    <p>Our team of qualified veterinary professionals provides expert guidance and support.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Animal Welfare</h3>
+                    <p>Committed to promoting the health and well-being of all animals we serve.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Statistics -->
+        <section class="section">
+            <h2>By The Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Trusted Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Product Variants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">All India</div>
+                    <div class="stat-label">Delivery Coverage</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why We're Different -->
+        <section class="section">
+            <h2>Why We're Different</h2>
+            <p><strong>Licensed Veterinary Pharmacy:</strong> We operate under full veterinary pharmacy license, ensuring compliance with all regulations and standards.</p>
+            <p><strong>Expert Team:</strong> Our staff includes qualified veterinary professionals who understand animal health requirements and can provide expert guidance.</p>
+            <p><strong>Quality Assurance:</strong> Every product is carefully selected from trusted manufacturers and verified for quality before supply.</p>
+            <p><strong>Flexible Supply:</strong> We serve both wholesale and retail customers, making quality veterinary medicines accessible to all.</p>
+            <p><strong>Customer-Centric:</strong> We prioritize customer satisfaction and are always ready to help with product selection and advice.</p>
+            <p><strong>Pan-India Reach:</strong> With 20+ years of experience, we have established reliable supply chains across India.</p>
+        </section>
+
+        <!-- Commitment -->
+        <section class="section">
+            <h2>Our Commitment to You</h2>
+            <p>We are committed to being your trusted partner in animal health. Whether you are a farmer managing livestock, a veterinarian running a clinic, or a pet owner caring for your beloved companion, we are here to provide the medicines and support you need.</p>
+            <p>Our commitment extends beyond just selling products. We believe in building long-term relationships with our customers, understanding their unique needs, and providing solutions that make a real difference in animal health and welfare.</p>
+            <p>As we look to the future, we remain dedicated to our mission of providing quality veterinary medicines and professional service to the entire animal health community across India.</p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Garg Medical Agencies</h3>
+                <p>Your trusted veterinary pharmacy since 2002</p>
+                <p><strong>Established:</strong> 2002</p>
+            </div>
+            <div class="footer-section">
+                <h3>📍 Location</h3>
+                <p>1, Brijwas Market<br>Arya Samaj Road<br>Mathura, Uttar Pradesh 281001<br>India</p>
+            </div>
+            <div class="footer-section">
+                <h3>📞 Contact</h3>
+                <p><a href="tel:+919897890984">+91 9897890984</a></p>
+                <p><a href="tel:+918171989687">+91 8171989687</a></p>
+                <p><a href="mailto:satishagrawal475@gmail.com">satishagrawal475@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>⏰ Working Hours</h3>
+                <p>Monday - Monday: 10:00 AM - 9:00 PM</p>
+                <p><strong>Closed on Tuesday</strong></p>
+                <p><a href="https://maps.app.goo.gl/hhNPDyepDTVrDmet6" target="_blank">📍 View on Google Maps</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Garg Medical Agencies. All rights reserved. | Licensed Veterinary Medical Store</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919897890984?text=Hello%20Garg%20Medical%20Agencies%2C%20I%20would%20like%20to%20place%20an%20order" class="whatsapp-float" title="Order on WhatsApp">
+        💬
+    </a>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Garg Medical Agencies</title>
+    <meta name="description" content="Browse our wide range of veterinary medicines, vaccines, supplements, and products for cattle, dogs, poultry, goats, and all livestock animals.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e7e34;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1e7e34 0%, #4fb581 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1e7e34;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-call {
+            background-color: #1e7e34;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-call:hover {
+            background-color: #165a28;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #1e7e34 0%, #4fb581 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .intro {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .intro p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .category-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #1e7e34;
+            padding-bottom: 1rem;
+        }
+
+        .category-emoji {
+            font-size: 2.5rem;
+        }
+
+        .category-header h2 {
+            color: #1e7e34;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .products-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-item {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f5e9 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #1e7e34;
+            transition: all 0.3s;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-item h3 {
+            color: #1e7e34;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .product-item p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1e7e34 0%, #4fb581 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: #1e7e34;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: #1e7e34;
+        }
+
+        footer {
+            background: #1e3a2f;
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #4fb581;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .footer-section a {
+            color: #b3e5b3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            color: #999;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1da851;
+            transform: scale(1.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #1e7e34;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-call, .btn-whatsapp {
+                width: 100%;
+                text-align: center;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .products-list {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <div class="logo-icon">🐾</div>
+                <span>Garg Medical</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/products.html">Products</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="contact-buttons">
+                <a href="tel:+919897890984" class="btn-call">📞 Call Now</a>
+                <a href="https://wa.me/919897890984?text=Hello%20Garg%20Medical%20Agencies%2C%20I%20would%20like%20to%20place%20an%20order" class="btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Our Products</h1>
+        <p>Quality Veterinary Medicines for All Animals</p>
+    </div>
+
+    <div class="content">
+        <div class="intro">
+            <p>We offer a comprehensive range of veterinary medicines, vaccines, supplements, and grooming products for all types of animals. All our products are sourced from trusted manufacturers and meet the highest quality standards.</p>
+        </div>
+
+        <!-- Cattle Medicines -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-emoji">🐄</span>
+                <h2>Cattle Medicines (Cow & Buffalo)</h2>
+            </div>
+            <div class="products-list">
+                <div class="product-item">
+                    <div class="product-icon">💉</div>
+                    <h3>Vaccines</h3>
+                    <p>Comprehensive vaccination programs for cattle health including FMD, HS, and other essential vaccines</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🥗</div>
+                    <h3>Feed Supplements</h3>
+                    <p>Nutritional supplements for improved milk production and overall cattle health</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">💊</div>
+                    <h3>Dewormers</h3>
+                    <p>Effective deworming solutions to maintain cattle health and productivity</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">⚕️</div>
+                    <h3>Antibiotics</h3>
+                    <p>Broad-spectrum and targeted antibiotics for cattle infections and diseases</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🩹</div>
+                    <h3>Veterinary Medicines</h3>
+                    <p>Complete range of medicines for mastitis, respiratory, and digestive issues</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🧴</div>
+                    <h3>Grooming & Care</h3>
+                    <p>Specialized products for cattle skin health and parasite control</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pet Medicines -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-emoji">🐕</span>
+                <h2>Pet Medicines (Dogs & Cats)</h2>
+            </div>
+            <div class="products-list">
+                <div class="product-item">
+                    <div class="product-icon">💉</div>
+                    <h3>Vaccines</h3>
+                    <p>Essential vaccinations for puppies and adult dogs including rabies and DHPP vaccines</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🍖</div>
+                    <h3>Pet Food</h3>
+                    <p>Nutritious and balanced pet food formulations for healthy growth and vitality</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">💊</div>
+                    <h3>Dewormers</h3>
+                    <p>Safe and effective deworming products for dogs and cats of all ages</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">⚕️</div>
+                    <h3>Antibiotics</h3>
+                    <p>Pet-safe antibiotics for treating bacterial infections and diseases</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🧴</div>
+                    <h3>Grooming Products</h3>
+                    <p>Shampoos, conditioners, and grooming aids for healthy pet coat and skin</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🩹</div>
+                    <h3>Flea & Tick Control</h3>
+                    <p>Effective solutions for parasite prevention and control in pets</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poultry Medicines -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-emoji">🐔</span>
+                <h2>Poultry Medicines</h2>
+            </div>
+            <div class="products-list">
+                <div class="product-item">
+                    <div class="product-icon">💉</div>
+                    <h3>Vaccines</h3>
+                    <p>Poultry vaccines including Newcastle disease, Ranikhet, and other essential immunizations</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🥗</div>
+                    <h3>Feed Supplements</h3>
+                    <p>Nutritional additives for improved egg production and bird health</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">💊</div>
+                    <h3>Dewormers</h3>
+                    <p>Poultry-specific deworming solutions for flock health management</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">⚕️</div>
+                    <h3>Antibiotics</h3>
+                    <p>Broad-spectrum antibiotics for treating poultry diseases and infections</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🩹</div>
+                    <h3>Coccidiostats</h3>
+                    <p>Preventive and therapeutic solutions for coccidiosis in poultry</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🧴</div>
+                    <h3>Disinfectants</h3>
+                    <p>Effective disinfection products for poultry houses and equipment</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goat & Sheep Medicines -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-emoji">🐐</span>
+                <h2>Goat & Sheep Medicines</h2>
+            </div>
+            <div class="products-list">
+                <div class="product-item">
+                    <div class="product-icon">💉</div>
+                    <h3>Vaccines</h3>
+                    <p>Vaccination programs for goats and sheep including PPR and other essential vaccines</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🥗</div>
+                    <h3>Feed Supplements</h3>
+                    <p>Nutritional supplements for growth, wool quality, and milk production</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">💊</div>
+                    <h3>Dewormers</h3>
+                    <p>Effective deworming solutions for goat and sheep flock management</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">⚕️</div>
+                    <h3>Antibiotics</h3>
+                    <p>Targeted antibiotics for treating infections in goats and sheep</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🩹</div>
+                    <h3>Veterinary Medicines</h3>
+                    <p>Specialized medicines for reproductive health and disease management</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🧴</div>
+                    <h3>Parasite Control</h3>
+                    <p>External parasite control solutions for healthy wool and skin</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horse Medicines -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-emoji">🐴</span>
+                <h2>Horse Medicines</h2>
+            </div>
+            <div class="products-list">
+                <div class="product-item">
+                    <div class="product-icon">💉</div>
+                    <h3>Vaccines</h3>
+                    <p>Equine vaccines including tetanus, influenza, and other essential immunizations</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🥗</div>
+                    <h3>Feed Supplements</h3>
+                    <p>Performance and health supplements for horses and equine animals</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">💊</div>
+                    <h3>Dewormers</h3>
+                    <p>Equine deworming products for parasite control and health maintenance</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">⚕️</div>
+                    <h3>Antibiotics</h3>
+                    <p>Equine-specific antibiotics for treating infections and diseases</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🩹</div>
+                    <h3>Joint & Bone Care</h3>
+                    <p>Specialized products for equine joint health and lameness management</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🧴</div>
+                    <h3>Grooming & Care</h3>
+                    <p>Premium grooming products for equine coat and skin health</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Livestock -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-emoji">🦬</span>
+                <h2>Other Livestock Animals</h2>
+            </div>
+            <div class="products-list">
+                <div class="product-item">
+                    <div class="product-icon">💉</div>
+                    <h3>Vaccines</h3>
+                    <p>Comprehensive vaccination solutions for various livestock species</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🥗</div>
+                    <h3>Feed Supplements</h3>
+                    <p>Nutritional products tailored for different livestock requirements</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">💊</div>
+                    <h3>Dewormers</h3>
+                    <p>Broad-spectrum deworming solutions for all livestock types</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">⚕️</div>
+                    <h3>Antibiotics</h3>
+                    <p>Effective antibiotics for treating livestock infections</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🩹</div>
+                    <h3>Veterinary Medicines</h3>
+                    <p>Complete range of medicines for various livestock health issues</p>
+                </div>
+                <div class="product-item">
+                    <div class="product-icon">🧴</div>
+                    <h3>Care Products</h3>
+                    <p>Specialized care and maintenance products for livestock health</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2>Need Help Choosing the Right Product?</h2>
+            <p>Our qualified veterinary professionals are ready to assist you in selecting the perfect medicines and supplements for your animals.</p>
+            <div class="cta-buttons">
+                <a href="tel:+919897890984" class="btn-primary">📞 Call Us Now</a>
+                <a href="https://wa.me/919897890984?text=Hello%20Garg%20Medical%20Agencies%2C%20I%20need%20help%20selecting%20products" class="btn-secondary">💬 Chat on WhatsApp</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Garg Medical Agencies</h3>
+                <p>Your trusted veterinary pharmacy since 2002</p>
+                <p><strong>Established:</strong> 2002</p>
+            </div>
+            <div class="footer-section">
+                <h3>📍 Location</h3>
+                <p>1, Brijwas Market<br>Arya Samaj Road<br>Mathura, Uttar Pradesh 281001<br>India</p>
+            </div>
+            <div class="footer-section">
+                <h3>📞 Contact</h3>
+                <p><a href="tel:+919897890984">+91 9897890984</a></p>
+                <p><a href="tel:+918171989687">+91 8171989687</a></p>
+                <p><a href="mailto:satishagrawal475@gmail.com">satishagrawal475@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>⏰ Working Hours</h3>
+                <p>Monday - Monday: 10:00 AM - 9:00 PM</p>
+                <p><strong>Closed on Tuesday</strong></p>
+                <p><a href="https://maps.app.goo.gl/hhNPDyepDTVrDmet6" target="_blank">📍 View on Google Maps</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Garg Medical Agencies. All rights reserved. | Licensed Veterinary Medical Store</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919897890984?text=Hello%20Garg%20Medical%20Agencies%2C%20I%20would%20like%20to%20place%20an%20order" class="whatsapp-float" title="Order on WhatsApp">
+        💬
+    </a>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

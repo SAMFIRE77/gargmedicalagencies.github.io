@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Garg Medical Agencies</title>
+    <meta name="description" content="Contact Garg Medical Agencies in Mathura. Phone: +91 9897890984, +91 8171989687. Email: satishagrawal475@gmail.com. Open 10 AM - 9 PM (Closed Tuesday)">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e7e34;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1e7e34 0%, #4fb581 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1e7e34;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-call {
+            background-color: #1e7e34;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-call:hover {
+            background-color: #165a28;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #1e7e34 0%, #4fb581 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info h2 {
+            color: #1e7e34;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 3px solid #1e7e34;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-label {
+            color: #1e7e34;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-content {
+            color: #666;
+            margin-left: 1.5rem;
+        }
+
+        .info-content a {
+            color: #1e7e34;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .info-content a:hover {
+            color: #165a28;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: #1e7e34;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background-color: #165a28;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #25d366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+        }
+
+        .map-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .map-container h2 {
+            color: #1e7e34;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 3px solid #1e7e34;
+            padding-bottom: 0.5rem;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #1e7e34;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .map-link:hover {
+            color: #165a28;
+            text-decoration: underline;
+        }
+
+        .hours-highlight {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f5e9 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #1e7e34;
+            margin-top: 1rem;
+        }
+
+        .hours-highlight h3 {
+            color: #1e7e34;
+            margin-bottom: 0.5rem;
+        }
+
+        .hours-highlight p {
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+
+        .closed-notice {
+            background: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #ffc107;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            background: #1e3a2f;
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #4fb581;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .footer-section a {
+            color: #b3e5b3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            color: #999;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #1da851;
+            transform: scale(1.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #1e7e34;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-call, .btn-whatsapp {
+                width: 100%;
+                text-align: center;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-frame {
+                height: 300px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">
+                <div class="logo-icon">🐾</div>
+                <span>Garg Medical</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/products.html">Products</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="contact-buttons">
+                <a href="tel:+919897890984" class="btn-call">📞 Call Now</a>
+                <a href="https://wa.me/919897890984?text=Hello%20Garg%20Medical%20Agencies%2C%20I%20would%20like%20to%20place%20an%20order" class="btn-whatsapp">💬 WhatsApp</a>
+            </div>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Contact Us</h1>
+        <p>Get in Touch with Garg Medical Agencies</p>
+    </div>
+
+    <div class="content">
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>📞 Contact Information</h2>
+
+                <div class="info-item">
+                    <div class="info-label">📍 Address</div>
+                    <div class="info-content">
+                        1, Brijwas Market<br>
+                        Arya Samaj Road<br>
+                        Mathura, Uttar Pradesh 281001<br>
+                        India
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">📞 Phone Numbers</div>
+                    <div class="info-content">
+                        <a href="tel:+919897890984">+91 9897890984</a><br>
+                        <a href="tel:+918171989687">+91 8171989687</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">📧 Email</div>
+                    <div class="info-content">
+                        <a href="mailto:satishagrawal475@gmail.com">satishagrawal475@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">🗺️ Google Maps</div>
+                    <div class="info-content">
+                        <a href="https://maps.app.goo.gl/hhNPDyepDTVrDmet6" target="_blank">View Location on Google Maps</a>
+                    </div>
+                </div>
+
+                <div class="hours-highlight">
+                    <h3>⏰ Working Hours</h3>
+                    <p><strong>Monday - Monday:</strong> 10:00 AM - 9:00 PM</p>
+                    <div class="closed-notice">
+                        <strong>⚠️ Closed on Tuesday</strong>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="tel:+919897890984" class="btn-primary">📞 Call Now</a>
+                    <a href="https://wa.me/919897890984?text=Hello%20Garg%20Medical%20Agencies%2C%20I%20would%20like%20to%20place%20an%20order" class="btn-secondary">💬 WhatsApp Order</a>
+                </div>
+            </div>
+
+            <!-- Quick Info -->
+            <div class="contact-info">
+                <h2>ℹ️ Quick Information</h2>
+
+                <div class="info-item">
+                    <div class="info-label">🏢 Business Type</div>
+                    <div class="info-content">
+                        Licensed Veterinary Medical Store
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">📅 Established</div>
+                    <div class="info-content">
+                        2002 (20+ Years of Trust)
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">🌍 Service Area</div>
+                    <div class="info-content">
+                        Wholesale and Retail supply across India
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">🐾 Animals Served</div>
+                    <div class="info-content">
+                        Cattle, Dogs, Cats, Poultry, Goats, Sheep, Horses, and all livestock animals
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">💊 Products</div>
+                    <div class="info-content">
+                        Vaccines, Medicines, Supplements, Dewormers, Antibiotics, Grooming Products
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">👥 Target Customers</div>
+                    <div class="info-content">
+                        Farmers, Veterinary Doctors, Pet Owners, Animal Clinics, Livestock Owners
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-container">
+            <h2>🗺️ Our Location</h2>
+            <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.5678901234567!2d77.67890123456789!3d27.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39737d1234567890%3A0x1234567890abcdef!2s1%20Brijwas%20Market%2C%20Arya%20Samaj%20Road%2C%20Mathura%2C%20Uttar%20Pradesh%20281001!5e0!3m2!1sen!2sin!4v1234567890123" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p><a href="https://maps.app.goo.gl/hhNPDyepDTVrDmet6" target="_blank" class="map-link">📍 Open Full Map on Google Maps</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Garg Medical Agencies</h3>
+                <p>Your trusted veterinary pharmacy since 2002</p>
+                <p><strong>Established:</strong> 2002</p>
+            </div>
+            <div class="footer-section">
+                <h3>📍 Location</h3>
+                <p>1, Brijwas Market<br>Arya Samaj Road<br>Mathura, Uttar Pradesh 281001<br>India</p>
+            </div>
+            <div class="footer-section">
+                <h3>📞 Contact</h3>
+                <p><a href="tel:+919897890984">+91 9897890984</a></p>
+                <p><a href="tel:+918171989687">+91 8171989687</a></p>
+                <p><a href="mailto:satishagrawal475@gmail.com">satishagrawal475@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>⏰ Working Hours</h3>
+                <p>Monday - Monday: 10:00 AM - 9:00 PM</p>
+                <p><strong>Closed on Tuesday</strong></p>
+                <p><a href="https://maps.app.goo.gl/hhNPDyepDTVrDmet6" target="_blank">📍 View on Google Maps</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Garg Medical Agencies. All rights reserved. | Licensed Veterinary Medical Store</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919897890984?text=Hello%20Garg%20Medical%20Agencies%2C%20I%20would%20like%20to%20place%20an%20order" class="whatsapp-float" title="Order on WhatsApp">
+        💬
+    </a>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
